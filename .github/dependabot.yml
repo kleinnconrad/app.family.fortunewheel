@@ -1,0 +1,33 @@
+# Dependabot version updates: https://docs.github.com/code-security/dependabot/dependabot-version-updates
+version: 2
+updates:
+  # npm packages. Dependabot updates package.json and package-lock.json together,
+  # so transitive dependencies stay pinned by the lock file.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: deps
+    groups:
+      # Bundle minor and patch updates into one PR to keep the noise down;
+      # major updates still get their own PRs.
+      npm-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # Actions used by the GitHub workflows.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: ci
+    groups:
+      github-actions:
+        patterns:
+          - '*'

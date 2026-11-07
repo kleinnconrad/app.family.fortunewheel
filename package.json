@@ -1,0 +1,26 @@
+{
+  "name": "family-fortune-wheel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A kid-friendly wheel of fortune with German drawing challenges, deployed to GitHub Pages.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@fontsource-variable/fredoka": "^5.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}

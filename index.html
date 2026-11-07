@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Ein buntes Glücksrad mit lustigen Mal-Aufgaben für Kinder – drehen, zuhören, loslegen!" />
+    <meta name="theme-color" content="#6c3ce0" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Glücksrad</title>
+  </head>
+  <body>
+    <div class="app">
+      <header class="top">
+        <div>
+          <h1 class="title">Glücksrad <span aria-hidden="true">🎨</span></h1>
+          <p class="tagline">Dreh am Rad – und los geht’s mit Stift und Papier!</p>
+        </div>
+        <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true" aria-label="Ton">
+          <span id="sound-label" aria-hidden="true">🔊 Ton an</span>
+        </button>
+      </header>
+
+      <main class="stage">
+        <section class="wheel-area" aria-label="Glücksrad">
+          <div id="wheel-frame" class="wheel-frame">
+            <div class="wheel-clip">
+              <div id="wheel" class="wheel" role="img" aria-label="Glücksrad mit Mal-Aufgaben"></div>
+            </div>
+            <div class="pointer-holder" aria-hidden="true">
+              <div id="pointer" class="pointer">
+                <svg viewBox="0 0 60 84" focusable="false">
+                  <path d="M30 82 L5 33 A27 27 0 1 1 55 33 Z" class="pointer-body" />
+                  <circle cx="30" cy="28" r="9" class="pointer-dot" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <button id="spin-button" class="spin-button" type="button" disabled>Drehen!</button>
+        </section>
+
+        <section id="result" class="result" aria-labelledby="result-label">
+          <div class="result-emoji" id="result-emoji" aria-hidden="true">🎡</div>
+          <div aria-live="polite" aria-atomic="true">
+            <h2 class="result-label" id="result-label">Bereit?</h2>
+            <p class="result-text" id="result-text">Drück auf „Drehen!“ und lass dich überraschen.</p>
+          </div>
+          <div class="result-actions">
+            <button id="speak-button" class="pill-button" type="button" hidden>🔊 Nochmal vorlesen</button>
+            <button id="timer-button" class="pill-button" type="button" hidden>⏱️ Timer starten</button>
+          </div>
+          <div id="timer" class="timer" role="timer" hidden>
+            <span id="timer-value" class="timer-value">10</span>
+          </div>
+          <p id="timer-note" class="timer-note" aria-live="assertive"></p>
+        </section>
+      </main>
+
+      <footer class="footer">Viel Spaß beim Malen! 🖍️</footer>
+    </div>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+    <noscript>
+      <p class="noscript">Bitte aktiviere JavaScript, um das Glücksrad zu benutzen.</p>
+    </noscript>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+coverage/
+
+# Logs and editor/OS files
+*.log
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
